@@ -226,6 +226,11 @@ struct SGConfig gConfig = SGDefaultConfig();
 
 #pragma mark - MTKViewDelegate
 
+- (void)mtkView:(MTKView *)view drawableSizeWillChange:(CGSize)size {
+    _screenW = size.width;
+    _screenH = size.height;
+}
+
 - (void)drawInMTKView:(MTKView *)view {
     [self renderESP];
     if (!_menuOpen) return;
