@@ -189,13 +189,13 @@ static uint64_t g_il2cppBase = 0;
             uint64_t bipedMap = readPtr(charView + 0x28);
             if (bipedMap) {
                 uint64_t headT = readPtr(bipedMap + OFFSET_BIPED_HEAD);
-                if (headT) p.bones[0] = readVec3(headT + OFFSET_TRANSFORM_POS);
+                if (headT) p.boneHead = readVec3(headT + OFFSET_TRANSFORM_POS);
                 uint64_t neckT = readPtr(bipedMap + OFFSET_BIPED_NECK);
-                if (neckT) p.bones[1] = readVec3(neckT + OFFSET_TRANSFORM_POS);
+                if (neckT) p.boneNeck = readVec3(neckT + OFFSET_TRANSFORM_POS);
                 uint64_t spineT = readPtr(bipedMap + OFFSET_BIPED_SPINE);
-                if (spineT) p.bones[2] = readVec3(spineT + OFFSET_TRANSFORM_POS);
+                if (spineT) p.boneSpine = readVec3(spineT + OFFSET_TRANSFORM_POS);
                 uint64_t hipT = readPtr(bipedMap + OFFSET_BIPED_HIP);
-                if (hipT) p.bones[3] = readVec3(hipT + OFFSET_TRANSFORM_POS);
+                if (hipT) p.boneHip = readVec3(hipT + OFFSET_TRANSFORM_POS);
             }
         }
 
@@ -274,9 +274,9 @@ static uint64_t g_il2cppBase = 0;
 
 + (SGVec3)getTargetPosition:(SGPlayer *)player {
     switch (gConfig.aimbotTargetBone) {
-        case 0: return player.bones[0];
-        case 1: return player.bones[2];
-        case 2: return player.bones[3];
+        case 0: return player.boneHead;
+        case 1: return player.boneSpine;
+        case 2: return player.boneHip;
         default: return player.position;
     }
 }

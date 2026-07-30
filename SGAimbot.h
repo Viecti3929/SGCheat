@@ -10,7 +10,10 @@
 @property (nonatomic, assign) BOOL isVisible;
 @property (nonatomic, assign) float distance;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, assign) SGVec3 bones[4]; // 0=head 1=neck 2=chest 3=pelvis
+@property (nonatomic, assign) SGVec3 boneHead;
+@property (nonatomic, assign) SGVec3 boneNeck;
+@property (nonatomic, assign) SGVec3 boneSpine;
+@property (nonatomic, assign) SGVec3 boneHip;
 @end
 
 @interface SGAimbot : NSObject
