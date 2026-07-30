@@ -1,6 +1,6 @@
 #import "SGMath.h"
 
-BOOL SGWorldToScreen(SGVec3 worldPos, SGVec2 screenSize, SGMatrix4x4 viewMatrix, SGMatrix4x4 projMatrix, SGVec2 *outScreen) {
+bool SGWorldToScreen(SGVec3 worldPos, SGVec2 screenSize, SGMatrix4x4 viewMatrix, SGMatrix4x4 projMatrix, SGVec2 *outScreen) {
     // combine view & projection
     float mvp[16];
     for (int i = 0; i < 4; i++) {
@@ -17,7 +17,7 @@ BOOL SGWorldToScreen(SGVec3 worldPos, SGVec2 screenSize, SGMatrix4x4 viewMatrix,
     float y = worldPos.x * mvp[1] + worldPos.y * mvp[5] + worldPos.z * mvp[9] + mvp[13];
     float w = worldPos.x * mvp[3] + worldPos.y * mvp[7] + worldPos.z * mvp[11] + mvp[15];
     
-    if (w < 0.01f) return NO;
+    if (w < 0.01f) return false;
     
     float invW = 1.0f / w;
     x *= invW;
@@ -27,5 +27,5 @@ BOOL SGWorldToScreen(SGVec3 worldPos, SGVec2 screenSize, SGMatrix4x4 viewMatrix,
     outScreen->x = (x + 1.0f) * 0.5f * screenSize.x;
     outScreen->y = (1.0f - y) * 0.5f * screenSize.y;
     
-    return YES;
+    return true;
 }

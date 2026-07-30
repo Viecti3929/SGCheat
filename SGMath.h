@@ -51,4 +51,4 @@ static inline float SGVec3AngleBetween(SGVec3 a, SGVec3 b) {
     return acosf(dot / (lenA * lenB));
 }
 
-BOOL SGWorldToScreen(SGVec3 worldPos, SGVec2 screenSize, SGMatrix4x4 viewMatrix, SGMatrix4x4 projMatrix, SGVec2 *outScreen);
+bool SGWorldToScreen(SGVec3 worldPos, SGVec2 screenSize, SGMatrix4x4 viewMatrix, SGMatrix4x4 projMatrix, SGVec2 *outScreen);
