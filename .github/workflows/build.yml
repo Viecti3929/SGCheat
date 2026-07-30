@@ -29,8 +29,21 @@ jobs:
         run: |
           make clean package
 
-      - name: Upload artifact
+      - name: Prepare dylib
+        run: |
+          cp .theos/obj/SGCheat.dylib SGCheat.dylib || true
+          # Also try to find it inside the staged layout
+          find .theos -name "SGCheat.dylib" -exec cp {} SGCheat.dylib \; -quit || true
+          ls -la SGCheat.dylib || echo "dylib not found at expected path"
+
+      - name: Upload deb
         uses: actions/upload-artifact@v4
         with:
-          name: SGCheat
+          name: SGCheat-deb
           path: packages/*.deb
+
+      - name: Upload dylib
+        uses: actions/upload-artifact@v4
+        with:
+          name: SGCheat-dylib
+          path: SGCheat.dylib
