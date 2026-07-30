@@ -124,8 +124,7 @@ struct SGConfig gConfig = SGDefaultConfig();
     _overlayView.clearColor = MTLClearColorMake(0, 0, 0, 0);
     _overlayView.layer.zPosition = FLT_MAX;
     
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    if (!window) window = [UIApplication sharedApplication].windows.firstObject;
+    UIWindow *window = [UIApplication sharedApplication].windows.firstObject;
     [window addSubview:_overlayView];
     [window bringSubviewToFront:_overlayView];
     

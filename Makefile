@@ -9,7 +9,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = SGCheat
 SGCheat_FILES = SGEntry.xm SGMenu.mm SGAimbot.mm SGEsp.mm SGMath.mm
-SGCheat_CFLAGS = -fobjc-arc -I.
+SGCheat_CFLAGS = -fobjc-arc -I. -Wno-deprecated-declarations -Wno-c++11-narrowing
 SGCheat_LDFLAGS = -lz -framework Metal -framework MetalKit -framework UIKit -framework CoreGraphics
 
 include $(THEOS_MAKE_PATH)/tweak.mk
