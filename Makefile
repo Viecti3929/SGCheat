@@ -14,5 +14,5 @@ SGCheat_LDFLAGS = -lz -framework Metal -framework MetalKit -framework UIKit -fra
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
-after-package:
+after-package::
     @echo "SGCheat built. .deb at: $(THEOS_OBJ_DIR)"
