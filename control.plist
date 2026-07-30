@@ -1,0 +1,7 @@
+{
+    Filter = {
+        Bundles = (
+            "com.axel.spring.s2",
+        );
+    };
+}
