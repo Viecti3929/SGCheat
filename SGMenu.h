@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <Metal/Metal.h>
-#import <MetalKit/MetalKit.h>
+
+@class MTKView;
 
 typedef NS_ENUM(NSInteger, SGMenuItemType) {
     SGMenuItemTypeToggle,

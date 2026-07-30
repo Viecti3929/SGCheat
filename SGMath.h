@@ -1,6 +1,5 @@
-#import <simd/simd.h>
-#import <CoreGraphics/CGGeometry.h>
-#import <UIKit/UIKit.h>
+#include <math.h>
+#include <stdbool.h>
 
 typedef struct SGMatrix4x4 {
     float m[16];
