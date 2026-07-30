@@ -351,10 +351,6 @@ static inline int readInt(uint64_t addr) {
     return *(volatile int *)addr;
 }
 
-static inline float readFloat(uint64_t addr) {
-    return *(volatile float *)addr;
-}
-
 static inline BOOL readBool(uint64_t addr) {
     return *(volatile uint8_t *)addr != 0;
 }
