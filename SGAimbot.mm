@@ -360,7 +360,9 @@ static inline BOOL readBool(uint64_t addr) {
 }
 
 static inline SGVec3 readVec3(uint64_t addr) {
-    return *(volatile SGVec3 *)addr;
+    SGVec3 result;
+    memcpy(&result, (void *)addr, sizeof(result));
+    return result;
 }
 
 static inline void readBytes(uint64_t addr, void *buffer, size_t length) {

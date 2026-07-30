@@ -6,16 +6,16 @@
 // From: dump.cs / script.json
 // ============================================================
 namespace ClassAddr {
-    inline constexpr uintptr_t BipedMap              = 0xAC5E530;
-    inline constexpr uintptr_t GEADDDBFAGHCHFF       = 0xAC62738;
-    inline constexpr uintptr_t PhotonPlayer           = 0xAC65AE8;
-    inline constexpr uintptr_t PhotonView             = 0xAC65B58;
-    inline constexpr uintptr_t PlayerController       = 0xAC60F58;
-    inline constexpr uintptr_t PlayerMainCamera       = 0xAC60F08;
-    inline constexpr uintptr_t PlayerManager          = 0xAC60F30;
-    inline constexpr uintptr_t Room                   = 0xAC63278;
-    inline constexpr uintptr_t RoomInfo               = 0xAC63280;
-    inline constexpr uintptr_t GameController         = 0xAC44100; // approximate
+    static constexpr uintptr_t BipedMap              = 0xAC5E530;
+    static constexpr uintptr_t GEADDDBFAGHCHFF       = 0xAC62738;
+    static constexpr uintptr_t PhotonPlayer           = 0xAC65AE8;
+    static constexpr uintptr_t PhotonView             = 0xAC65B58;
+    static constexpr uintptr_t PlayerController       = 0xAC60F58;
+    static constexpr uintptr_t PlayerMainCamera       = 0xAC60F08;
+    static constexpr uintptr_t PlayerManager          = 0xAC60F30;
+    static constexpr uintptr_t Room                   = 0xAC63278;
+    static constexpr uintptr_t RoomInfo               = 0xAC63280;
+    static constexpr uintptr_t GameController         = 0xAC44100; // approximate
 }
 
 // ============================================================
