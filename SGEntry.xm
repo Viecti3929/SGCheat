@@ -1,3 +1,5 @@
+#import "SGMenu.h"
+
 %hook UnityAppController
 
 - (void)applicationDidFinishLaunching:(id)arg1 {
